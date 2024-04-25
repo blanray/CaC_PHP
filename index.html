@@ -1,41 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/index.css" />
-    <title>Resto En Serio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="/public/img/principal.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAC-Libros</title>
+   
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilos_bootstrap.css">
+
+
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/img/iconoBarra.ico" type="image/x-icon">
 </head>
-
 <body>
-    <div class="containerHeader">
-        <header id="miHeaderDinamico">
-        </header>
-
-        <div class="hero">
-            <div class="textoHero">
-                <h1>VENÍ,</h1>
-                <h1>COMÉ DE VERDAD</h1>
-                <h3>Buenos Aires, Argentina</h3>
+    <header class="header" >
+        <nav >
+            <a href="#">
+                <span>CAC-Libros</span>
+            </a>
+            <ul >
+                <li ><a  href="#novedades">Novedades</a></li>
+                <li ><a  href="./pages/registrarse.html">Registrarse</a></li>
+                <li ><a  href="./pages/iniciosesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" >
+        <section class="sectionTitulos">
+            <div class="contenedorTitulos">
+                <h1 >Los mejores libros, <br> en un solo lugar.</h1>
+                <h2 >Entra ahora <br> (sabemos que no te vas a ir)</h2>
+                <a  href="./pages/registrarse.html">Registrate</a>
+            </div>
+           
+        </section>
+        <section >
+            <div class="contenedorBuscador">
+                <h2 >Proxima lectura</h2>
+                <form >
+                    <input type="text" placeholder="Buscar..." id="buscar" name="buscar">
+                    <input type="submit" value="Buscar">
+                </form>
             </div>
 
-        </div>
+        </section>
+        <hr>
+        <section id="novedades" class="peliculasTendencias">
+            <h2>Novedades</h2>
+            <div class="galeriaTendencias">
+                <div> 
+                    <a href="./pages/detalle.html"><img  src="./assets/img/libro_1.jpg" alt="La Traición y La Tierra Media" loading="lazy"></a>
+                </div>
+            </div>
+            <button  class="botonPeliculas anterior" >Anterior</button>  
+            <button class="botonPeliculas siguiente" >Siguiente</button>
+        </section>
+        <hr>
+        <section class="peliculasAclamadas" >
+            <h2>Clasicos</h2>
+             <div class="galeriaAclamadas">
+                <div >
+                    <img  src="./assets/img/clasico_1.webp" alt="clasico_1" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-        <footer id="miFooterDinamico">
-            <!-- <a href="https://www.w3schools.com/">Visit W3Schools.com!</a> para agregar dp contactos fake -->
-        </footer>
-    </div>
+    </main>
+    <footer class="container-fluid">
+        <nav class="navegacion h-100">
+            <ul class="h-100 d-flex flex-column flex-md-row sinLista gap-3 justify-content-evenly align-items-center">
+                <li class="listaItem"><a class="text-white fs-4 text-decoration-none" href="">Términos y condiciones</a></li>
+                <li class="listaItem"><a class="text-white fs-4 text-decoration-none" href="">Preguntas frecuentes</a></li>
+                <li class="listaItem"><a class="text-white fs-4 text-decoration-none" href="">Ayuda</a></li>
+                <li class="listaItem"><a class="text-white fs-4 text-decoration-none administradorPeliculas" href="">Administrador Peliculas</a></li>
+            </ul>
+        </nav>
+        <a href="#main" class="position-fixed bottom-0 end-0">
+            <img src="../assets/img/flecha-hacia-arriba.png" alt="ir arriba flecha">
+        </a>
+    </footer>
+    <script src="../js/bootstrap.bundle.min.js"></script>   
 </body>
-
-<script src="/app.js"></script>
-
 </html>

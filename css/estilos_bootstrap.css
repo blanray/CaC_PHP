@@ -1,0 +1,55 @@
+
+/*configuracion de variables*/
+:root{
+    --main-color: #f3f3f3;
+    --secondary-color: #5e2f04;
+    --third-color: #8f5305;
+    --third-color-t: #6a7c02bc;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+}
+header{
+    height: 15vh;
+    nav{
+        height:100%;
+    }
+}
+footer{
+    height: 15vh;
+    background-color: var(--third-color);
+    color: var(--main-color);
+}
+@media (max-width: 575px){
+    header{
+        height: initial;
+        nav{
+            height: initial;
+        }
+    }
+    footer{
+        height: initial;
+        nav{
+            height: initial;
+        }
+    }
+}
+.bgBordo{
+  background-color: var(--third-color);
+}
+
+/*estilos de detalle*/
+
+.altoIframe{
+    height: 350px;
+}
+.sinLista{
+    list-style: none;
+}
