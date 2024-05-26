@@ -10,8 +10,8 @@ const misRegExp = {
 //miBotonContacto.addEventListener('click', validarDatosContacto);
 
 document.addEventListener("DOMContentLoaded", function() {
-    let miFormularioContacto = document.getElementById("miFormContacto")
-    miFormularioContacto.addEventListener('submit', validarDatosContacto);
+    let miFormularioRegistro = document.getElementById("miFormRegistro")
+    miFormularioRegistro.addEventListener('submit', validarDatosRegistro);
 
 });
 
@@ -36,10 +36,10 @@ document.addEventListener("DOMContentLoaded", function() {
 }
  */
 
-function validarDatosContacto(evento) {
+function validarDatosRegistro(evento) {
     evento.preventDefault();
 
-    var miEmail = document.getElementById('miEmailComentarios').value;
+    var miEmail = document.getElementById('miEmailRegistro').value;
 
     if (miEmail.length == 0) {
         alert('El email no puede estar vacio');
@@ -51,7 +51,7 @@ function validarDatosContacto(evento) {
         return;
     };
 
-    var miNombre = document.getElementById('miNombreComentarios').value;
+    var miNombre = document.getElementById('miNombreRegistro').value;
 
     if (miNombre.length == 0) {
         alert('El nombre no puede estar vacio');
@@ -63,7 +63,7 @@ function validarDatosContacto(evento) {
         return;
     };
 
-    var miApellido = document.getElementById('miApellidoComentarios').value;
+    var miApellido = document.getElementById('miApellidoRegistro').value;
 
     if (miApellido.length == 0) {
         alert('El apellido no puede estar vacio');
@@ -75,12 +75,33 @@ function validarDatosContacto(evento) {
         return;
     };
 
-    var miComentario = document.getElementById("mensaje").value;
+    var miNac = document.getElementById('miFechaNacRegistro').value;
 
-    if (miComentario.length < 10) {
-        alert('Decinos un poco mas, al menos 10 caracteres');
+    if (miNac.length == 0) {
+        alert('La fecha de nacimiento no puede estar vacia');
         return;
     }
+
+    var miPass = document.getElementById('miPassWordRegistro').value;
+
+    if (miPass.length == 0 || miPass.length<10) {
+        alert('El password no puede estar vacio ni tener menos de 10 caracteres');
+        return;
+    }
+
+    var miPais = document.getElementById('miPaisRegistro').value;
+
+    if (miPais.length == 0) {
+        alert('Debe seleccionar un país');
+        return;
+    }
+    var miTyC = document.getElementById('miTyCRegistro').checked;
+
+    if (!miTyC) {
+        alert('Debe aceptar los Terminos y Condiciones');
+        return;
+    }
+
 
     setTimeout(() => {
         this.submit();

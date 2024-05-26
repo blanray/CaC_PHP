@@ -1,30 +1,48 @@
 //API REST Clima(Weatherbit)
 
 
-var miSelect = document.getElementById("miSucursal");
+var miSelect = document.getElementById("miPaisRegistro");
 miSelect.addEventListener('change', buscarClima);
-
-var miUbicacion = document.getElementById("miIframe");
-miUbicacion.addEventListener('load', buscarClima);
 
 function buscarClima() {
 
-    var miSelectorTemp = document.getElementById("miSucursal");
-    var opcion = miSelectorTemp.selectedIndex;
+    var miSelectorTemp = document.getElementById("miPaisRegistro");
+    var opcion = miSelectorTemp.value;
     var miLocalidad = "";
 
     switch (opcion) {
-        case 0:
+        case "":
             miLocalidad = "Buenos%20Aires";
             break;
-        case 1:
-            miLocalidad = "La%20Plata";
+        case "AR":
+            miLocalidad = "Buenos%20Aires";
             break;
-        case 2:
-            miLocalidad = "Quilmes";
+        case "BO":
+            miLocalidad = "Sucre";
             break;
-        case 3:
-            miLocalidad = "Berazategui";
+        case "BR":
+            miLocalidad = "Rio";
+            break;
+        case "CH":
+            miLocalidad = "Santiago";
+            break;
+        case "CO":
+            miLocalidad = "Bogota";
+            break;
+        case "EC":
+            miLocalidad = "Quito";
+            break;
+        case "PY":
+            miLocalidad = "Asuncion";
+            break;
+        case "PE":
+            miLocalidad = "Lima";
+            break;
+        case "UY":
+            miLocalidad = "Montevideo";
+            break;
+        case "VE":
+            miLocalidad = "Caracas";
             break;
         default:
             miLocalidad = "Buenos%20Aires";
