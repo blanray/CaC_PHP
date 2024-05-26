@@ -16,25 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-/* function validarDatosContacto() {
-    const miNombre = document.getElementById("miNombreComentarios");
-    const miEmail = document.getElementById("miEmailComentarios");
-    const miComentario = document.getElementById("mensaje");
-    var correcto = true;
+document.addEventListener("DOMContentLoaded", function() {
+    let miFormularioInicio = document.getElementById("miFormInicio")
+    miFormularioInicio.addEventListener('submit', validarDatosInicio);
 
-    if (!misRegExp.nombre.test(miNombre.textContent)) {
-        alert("El nombre solo puede tener letras y espacios. No puede estar vacio");
-        correcto = false;
-    };
-
-    if (!misRegExp.correo.test(miEmail.textContent)) {
-        alert("El formato de mail es incorrecto o está vacio");
-        correcto = false;
-    };
-
-    return correcto;
-}
- */
+});
 
 function validarDatosRegistro(evento) {
     evento.preventDefault();
@@ -109,53 +95,63 @@ function validarDatosRegistro(evento) {
 
     Swal.fire({
         position: 'top-end',
-        icon: 'success',
-        title: 'Gracias por tus valiosos comentarios!',
+        icon: 'info',
+        title: 'Registro creado exitosamente!',
         showConfirmButton: false,
         timer: 2000
     })
 
     setTimeout(() => {
-        document.getElementById('miEmailComentarios').value = "";
-        document.getElementById('miNombreComentarios').value = ""
-        document.getElementById('miApellidoComentarios').value = "";
-        document.getElementById("mensaje").value = "";
-        document.getElementById("miSuscripcion").checked = false;
+        document.getElementById('miEmailRegistro').value = "";
+        document.getElementById('miNombreRegistro').value = ""
+        document.getElementById('miApellidoRegistro').value = "";
+        document.getElementById("miFechaNacRegistro").value = "";
+        document.getElementById('miPassWordRegistro').value = "";
+        document.getElementById("miPaisRegistro").value = "";
+        document.getElementById("miTyCRegistro").checked = false;
     }, 2000);
 
 
-
-    //alert("Gracias por tus valiosos comentarios!");
-
 }
 
+function validarDatosInicio(evento) {
+    evento.preventDefault();
 
+    var miEmail = document.getElementById('miEmailInicio').value;
 
-//const miFormulario = document.getElementById("miFormContacto");
-
-/* miFormulario.addEventListener('submit', (e) => {
-    e.preventDefault;
-
-    if (validarDatosContacto()) {
-        alert("Gracias por sus comentarios");
-        document.getElementById("miNombreComentarios").textContent = "";
-        document.getElementById("miEmailComentarios").textContent = "";
-        document.getElementById("mensaje").textContent = "";
-    }
-}) */
-
-document.getElementById("botonReservas").addEventListener('click', () => {
-    var miReserva = document.getElementById('nombre').value;
-
-    if (miReserva.length == 0) {
-        alert('El nombre no puede estar vacio');
+    if (miEmail.length == 0) {
+        alert('El email no puede estar vacio');
         return;
     }
 
-    let miFormuarioReservas = document.getElementById('formReservas');
+    if (!misRegExp.correo.test(miEmail)) {
+        alert("El formato de mail es incorrecto");
+        return;
+    };
 
-    miFormuarioReservas.submit();
+    var miPass = document.getElementById('miPassWordInicio').value;
 
-    alert("Tu reserva esta confirmada, te esperamos!");
-    document.getElementById('nombre').value = "";
-})
+    if (miPass.length == 0 || miPass.length<10) {
+        alert('El password no puede estar vacio ni tener menos de 10 caracteres');
+        return;
+    }
+
+    setTimeout(() => {
+        this.submit();
+    }, 2000);
+
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Inicio de Sesion exitoso!',
+        showConfirmButton: false,
+        timer: 2000
+    })
+
+    setTimeout(() => {
+        document.getElementById('miEmailInicio').value = "";
+        document.getElementById('miPassWordInicio').value = "";
+    }, 2000);
+
+
+}
